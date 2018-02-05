@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends com.sample.common.CommonFunction{
 	
-	@FindBy(xpath = "//button[text()='✕']")
+	@FindBy(xpath = "//button[@class='_2AkmmA _29YdH8']")//button[text()='✕']
 	public WebElement closeLoginPopUp;
 
 	@FindBy(xpath = "//input[contains(@title,'Search for products')]")
@@ -36,7 +36,7 @@ public class HomePage extends com.sample.common.CommonFunction{
 
 	public void openApp() {
 		driver.get("https://www.flipkart.com");
-		//closeLoginPopUp.click();
+		closeLoginPopUp.click();
 	}
 
 	public void verifyPage() {
