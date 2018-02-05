@@ -50,8 +50,16 @@
     Then verify user landed on "Apple" page
     When user click on "iPhone" tab
     When user select "Apple iPhone" product
-#   Then user verify product description page
-#   When user add product to cart
-#   Then verify the product added to cart or not
-    
+
+   Scenario Outline: Add mobile to cart
+    Given user open browser and application
+    Then user verify homepage
+    When user click on "<mobileModel>" under "<menu>" tab
+    Then verify user landed on "<mobileModel>" page
+    When user select "<mobileModel>" product
   
+    Examples:
+   | mobileModel  |   menu       |
+   |   Samsung    |  Electronics |
+   |   OPPO       |  Electronics |
+   
