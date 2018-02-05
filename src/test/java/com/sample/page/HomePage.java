@@ -36,7 +36,7 @@ public class HomePage extends com.sample.common.CommonFunction{
 
 	public void openApp() {
 		driver.get("https://www.flipkart.com");
-		closeLoginPopUp.click();
+		//closeLoginPopUp.click();
 	}
 
 	public void verifyPage() {
