@@ -90,4 +90,10 @@ public class CommonFunction extends TestBase {
 		WebDriver driver = new FirefoxDriver(myProfile);
 	}
 
+	// code to switch to new window
+	protected void switchToWindow() {
+		for(String winHandle : driver.getWindowHandles()){
+		    driver.switchTo().window(winHandle);
+		}
+	}
 }
