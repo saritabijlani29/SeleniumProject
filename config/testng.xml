@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test run">
+	<!-- <listeners>
+		<listener class-name="com.sample.listener.TestNGListener"></listener>
+	</listeners> -->
+
+	<test name="Simple Test">
+		<classes>
+			<class name="com.sample.RunnerClass" />
+		</classes>
+	</test>
+</suite>
