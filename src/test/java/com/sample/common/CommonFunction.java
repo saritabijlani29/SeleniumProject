@@ -1,7 +1,9 @@
 package com.sample.common;
 
+
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
@@ -18,6 +20,7 @@ import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -55,6 +58,13 @@ public class CommonFunction extends TestBase {
 		js.executeScript("document.getElementById('" + id + "some id').value='" + value + "';");
 	}
 
+	// Sendkeys using java scripts, Using id of particular element
+	protected void sendKeysUsingActionsClass(WebElement element, String value) {
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element).sendKeys(value).build().perform();
+	}
+
+	// Get screenshot method
 	protected void takeScreenShot(String methodName) throws IOException {
 		File file = new File("testresults");
 		file.getAbsolutePath();
@@ -94,6 +104,24 @@ public class CommonFunction extends TestBase {
 	protected void switchToWindow() {
 		for(String winHandle : driver.getWindowHandles()){
 		    driver.switchTo().window(winHandle);
+		}
+	}
+	
+	// select drop down value using select class
+	protected void selectDropDownValueUsingSelectClass(WebElement element, String text) {
+		Select sel = new Select(element);
+		sel.selectByVisibleText(text);
+		
+	}
+
+	// select drop down value using list of web element option value
+	protected void selectDropDownValueUsingListOfWebElement(WebElement element, String text) {
+		Select mySelect = new Select(element);
+		List<WebElement> options = mySelect.getOptions();
+		for (WebElement option : options) {
+			if (option.getText().equalsIgnoreCase(text)) {
+				option.click();
+			}
 		}
 	}
 }
