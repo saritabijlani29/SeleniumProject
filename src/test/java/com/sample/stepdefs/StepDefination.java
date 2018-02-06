@@ -5,6 +5,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.sample.page.ElectronicsPage;
 import com.sample.page.HomePage;
+import com.sample.page.ProductDetailPage;
 import com.sample.page.TestBase;
 
 import cucumber.api.java.en.Given;
@@ -49,5 +50,11 @@ public class StepDefination extends TestBase{
 		ElectronicsPage electronics = PageFactory.initElements(driver, ElectronicsPage.class);
 		electronics.selectProduct(productName);
 	}
-
+	
+	@Then("^user verify product description page$")
+	public void verifyProductDescription(){
+		ProductDetailPage detailPage = PageFactory.initElements(driver, ProductDetailPage.class);
+		detailPage.verifyProductDescriptionPage();
+	}
+	
 }

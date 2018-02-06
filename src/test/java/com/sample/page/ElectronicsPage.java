@@ -3,12 +3,18 @@ package com.sample.page;
 import static org.testng.Assert.assertTrue;
 
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-public class ElectronicsPage extends com.sample.common.CommonFunction{
+import com.sample.common.CommonFunction;
 
+
+public class ElectronicsPage extends CommonFunction{
+	
+	final static Logger logger = Logger.getLogger("ElectronicsPage");
+	
 	private final String subCategoryHeader = "//h1[contains(text(),'%s')]";
 	
 	public WebElement getSubCategoryHeader(String headerName) {
@@ -47,6 +53,7 @@ public class ElectronicsPage extends com.sample.common.CommonFunction{
 	public void selectProduct(String productName){
 		waitForVisible(getElectronicProducts(productName).get(1));
 		assertTrue(getElectronicProducts(productName).get(1).isDisplayed(),"product is not present");
+		logger.info("Product is present on page");
 		clickUsingJS(getElectronicProducts(productName).get(1));
 	}
 }
