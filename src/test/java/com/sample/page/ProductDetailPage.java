@@ -13,10 +13,11 @@ public class ProductDetailPage extends CommonFunction{
 	//*[text()='BUY NOW' or @class='_2AkmmA _2Npkh4 _2kuvG8 _7UHT_c'] 
 	
 	public WebElement buyNowButton;
-	
-	public void verifyProductDescriptionPage(){
+
+	/* Verify product details page */
+	public void verifyProductDescriptionPage() {
 		switchToWindow();
 		assertEquals(buyNowButton.isDisplayed(), true);
 	}
-	
+
 }

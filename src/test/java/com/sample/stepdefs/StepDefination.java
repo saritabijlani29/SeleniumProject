@@ -42,7 +42,7 @@ public class StepDefination extends TestBase{
 	@When("^user click on \"([^\"]*)\" tab$")
 	public void clickOnTab(String tabName) {
 		ElectronicsPage electronics = PageFactory.initElements(driver, ElectronicsPage.class);
-		electronics.clickOnTab(tabName);
+		electronics.clickOnAppleItemCategoryTab(tabName);
 	}
 	
 	@When("^user select \"([^\"]*)\" product$")
