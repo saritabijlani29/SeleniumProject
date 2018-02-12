@@ -1,6 +1,5 @@
 package com.sample.common;
 
-
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -54,7 +53,8 @@ public class CommonFunction extends TestBase {
 		actions.moveToElement(element).click().build().perform();
 	}
 
-	// Sendkeys using java scripts, Using id of particular element and Also used to select value from dropdown 
+	// Sendkeys using java scripts, Using id of particular element and Also used
+	// to select value from dropdown
 	protected void sendKeysUsingJS(String id, String value) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.getElementById('" + id + "').value='" + value + "';");
@@ -100,6 +100,8 @@ public class CommonFunction extends TestBase {
 			e.printStackTrace();
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
+		}catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -142,7 +144,8 @@ public class CommonFunction extends TestBase {
 		act.moveToElement(element).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ENTER).build().perform();
 
 	}
-	protected void tearDown(){
+
+	protected void tearDown() {
 		driver.quit();
 	}
 }
